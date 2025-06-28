@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAILMAP – The Digital Twin of U.S. Railways</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      height: 40px;
+    }
+    .menu-button {
+      background-color: #0a3a66;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    .dropdown a {
+      display: block;
+      padding: 10px 15px;
+      color: #0a3a66;
+      text-decoration: none;
+    }
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 80px;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .slogan {
+      max-width: 500px;
+      margin-left: 40px;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    .slogan span:first-child {
+      color: #0a0a0a;
+      display: block;
+    }
+    .slogan span:last-child {
+      color: #0072ce;
+      display: block;
+    }
+    section {
+      padding: 60px 20px;
+      border-top: 1px solid #ddd;
+      max-width: 800px;
+      margin: auto;
+    }
+    section h2 {
+      color: #0a3a66;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo-railmap.png.svg" alt="RAILMAP Logo" class="logo" />
+  <div>
+    <button class="menu-button" onclick="toggleMenu()">MENU</button>
+    <div class="dropdown" id="dropdown-menu">
+      <a href="#mission">Mission & Goals</a>
+      <a href="#architecture">System Architecture</a>
+      <a href="#pilot">Texas Pilot</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <video src="index-assets/video-placeholder.mp4" autoplay muted loop playsinline></video>
+  <div class="slogan">
+    <span>Smarter Rails.</span>
+    <span>Safer Future.</span>
+  </div>
+</div>
+
+<section id="mission">
+  <h2>Mission & Goals</h2>
+  <p>The mission of RAILMAP is to provide a scalable, digital twin of the U.S. railway infrastructure to enhance safety, efficiency, and modernization.</p>
+</section>
+
+<section id="architecture">
+  <h2>System Architecture</h2>
+  <p>The platform utilizes UAVs, terrestrial scanning (FARO), and a photorealistic 5D digital modeling system for national deployment.</p>
+</section>
+
+<section id="pilot">
+  <h2>Texas Pilot</h2>
+  <p>The initial pilot is focused on the Dallas–Houston corridor, integrating with Class I freight operators and urban transit nodes.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>For inquiries, partnerships, or technical collaboration, please email contact@railmap.tech or reach out via LinkedIn.</p>
+</section>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("dropdown-menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
+
+</body>
+</html>
