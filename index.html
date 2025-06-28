@@ -203,6 +203,9 @@
     document.getElementById('dropdown-menu').style.display = 'none';
   });
 });
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 </script>
 </body>
 </html>
