@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +24,12 @@
     }
     .logo {
       height: 100px;
-       margin-left: 5cm;
+      margin-left: 5cm;
+    }
+    .menu-block {
+      position: relative;
+      display: inline-block;
+      margin-right: 2cm;
     }
     .menu-button {
       background-color: #0072ce;
@@ -37,6 +41,17 @@
       font-size: 1.3em;
       border-radius: 8px 8px 0 0;
     }
+    .dropdown {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      min-width: 300px;
+      border-radius: 0 0 8px 8px;
+    }
     .dropdown a {
       display: block;
       padding: 20px 30px;
@@ -46,23 +61,17 @@
       font-family: Arial, sans-serif;
       font-weight: 500;
     }
-    .dropdown a {
-      display: block;
-      padding: 20px 30px;
-      color: #0072ce;
-      text-decoration: none;
-    }
     .dropdown a:hover {
-      background-color: #0d1a26;
+      background-color: #f0f7fc;
     }
     .hero {
       display: flex;
       flex-wrap: wrap;
-      margin-top: 80px;
+      margin-top: 120px;
       align-items: center;
       justify-content: center;
       padding: 100px 20px;
-      min-height: 500px; 
+      min-height: 500px;
     }
     video {
       max-width: 100%;
@@ -71,17 +80,17 @@
     }
     .slogan {
       max-width: 500px;
-      margin-left: 40px;
+      margin-left: 2cm;
       font-size: 36px;
       font-weight: bold;
       line-height: 1.2;
     }
     .slogan span:first-child {
-      color: #0a0a0a;
+      color: #0B1D2A;
       display: block;
     }
     .slogan span:last-child {
-      color: #0072ce;
+      color: #0074D9;
       display: block;
     }
     section {
@@ -96,10 +105,9 @@
   </style>
 </head>
 <body>
-
 <header>
   <img src="logo-railmap.png" alt="RAILMAP Logo" class="logo" />
-  <div>
+  <div class="menu-block">
     <button class="menu-button" onclick="toggleMenu()">MENU</button>
     <div class="dropdown" id="dropdown-menu">
       <a href="#mission">Mission & Goals</a>
@@ -108,42 +116,42 @@
       <a href="#contact">Contact</a>
     </div>
   </div>
-  
 </header>
 <div class="hero">
-  <video src="index-assets/video-placeholder.mp4" autoplay muted loop playsinline></video>
-  <div class="slogan" style="margin-left: 2cm;">
-    <span style="color:#0B1D2A;">Smarter Rails.</span>
-    <span style="color:#0074D9;">Safer Future.</span>
+  <video src="video-placeholder.mp4" autoplay muted loop playsinline></video>
+  <div class="slogan">
+    <span>Smarter Rails.</span>
+    <span>Safer Future.</span>
   </div>
 </div>
-
 <section id="mission">
   <h2>Mission & Goals</h2>
   <p>The mission of RAILMAP is to provide a scalable, digital twin of the U.S. railway infrastructure to enhance safety, efficiency, and modernization.</p>
 </section>
-
 <section id="architecture">
   <h2>System Architecture</h2>
   <p>The platform utilizes UAVs, terrestrial scanning (FARO), and a photorealistic 5D digital modeling system for national deployment.</p>
 </section>
-
 <section id="pilot">
   <h2>Texas Pilot</h2>
   <p>The initial pilot is focused on the Dallas–Houston corridor, integrating with Class I freight operators and urban transit nodes.</p>
 </section>
-
 <section id="contact">
   <h2>Contact</h2>
   <p>For inquiries, partnerships, or technical collaboration, please email contact@railmap.tech or reach out via LinkedIn.</p>
 </section>
-
 <script>
   function toggleMenu() {
     var menu = document.getElementById("dropdown-menu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
+  document.addEventListener('click', function(e) {
+    var btn = document.querySelector('.menu-button');
+    var menu = document.getElementById('dropdown-menu');
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
 </script>
-
 </body>
 </html>
